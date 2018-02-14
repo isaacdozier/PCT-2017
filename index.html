@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>PCT Hike 2017</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="top">
+	<h1>PCT Hike 2017 - Washington</h1>
+	<button title="MY preperations" onClick="loadContent(this.innerHTML)">Preperations</button>
+	<button title="My daily journal" onClick="loadContent(this.innerHTML)">Journal</button>
+	<button title="My daily journal" onClick="loadContent(this.innerHTML)">Video</button>
+	*Journal may take a few minutes to load
+</div>
+<div id="mainContent">
+	<h1>Pacfici Crest Trail</h1>
+	<h2>Cascade Locks -> White Pass</h2>
+	<h2>Snoqualmie Pass -> Stevens Pass</h2>
+	<p>
+		Thanks for checking out my 2017 PCT Journal from the Cascade Locks, OR to Stevens Pass, WA sections.
+		It was an especiialy devistating year on the trail, as many large wildfires left looming clouds of smoke hovering over 
+		the area for quite some time. I eventually lef the trail early at Stevens pass and will atempt to finish next year.
+		
+		I also was forced off trail due to a strained ligament in my leg. It's all in the journal.
+		 
+		Enjoy!
+	</p>
+</div>
+<script> 
+var content = document.getElementById("mainContent");
+
+function loadContent(f) {
+	var client = new XMLHttpRequest();
+	client.open('GET', f + '.html');
+	client.onreadystatechange = function() {
+	  content.innerHTML = client.responseText;
+	}
+	client.send();
+}
+</script>
+
+</body>
+</html>
